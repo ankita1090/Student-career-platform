@@ -1,0 +1,270 @@
+.roadmap {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px 0;
+}
+
+.roadmap-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.roadmap-container h1 {
+  text-align: center;
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.roadmap-description {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+.timeline {
+  position: relative;
+  padding: 20px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, #4f46e5, #7c3aed);
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+  padding-left: 100px;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.marker-icon {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.timeline-content {
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  left: -15px;
+  top: 20px;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid white;
+}
+
+.milestone-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.milestone-header h3 {
+  color: #2d3748;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.duration {
+  background: #667eea;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.milestone-description {
+  color: #4a5568;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.skills-list h4 {
+  color: #2d3748;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.skill-tag {
+  background: #e2e8f0;
+  color: #4a5568;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.progress-indicator {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4f46e5, #7c3aed);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.status-completed .progress-fill {
+  width: 100%;
+}
+
+.status-in-progress .progress-fill {
+  width: 60%;
+}
+
+.status-pending .progress-fill {
+  width: 0%;
+}
+
+.progress-text {
+  color: #4a5568;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.status-completed .marker-icon {
+  color: #10b981;
+}
+
+.status-in-progress .marker-icon {
+  color: #f59e0b;
+  animation: spin 2s linear infinite;
+}
+
+.status-pending .marker-icon {
+  color: #6b7280;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.roadmap-summary {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  margin-top: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.roadmap-summary h3 {
+  color: #2d3748;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.summary-stats {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  color: #4a5568;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 25px;
+  }
+  
+  .timeline-item {
+    padding-left: 60px;
+  }
+  
+  .timeline-marker {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .marker-icon {
+    font-size: 16px;
+  }
+  
+  .timeline-content::before {
+    left: -10px;
+    border-right-width: 10px;
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+  }
+  
+  .milestone-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .summary-stats {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
